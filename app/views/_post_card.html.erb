@@ -1,0 +1,11 @@
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title"><%= post.title %></h5>
+    <p class="card-text text-truncate mb-1"><%= post.text %></p>
+    <p class="mb-0 text-end">
+      <small class="text-body-secondary">
+        Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %>
+      </small>
+    </p>
+  </div>
+</div>
