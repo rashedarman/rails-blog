@@ -1,1 +1,9 @@
-<h1>List of users</h1>
+<main class="container my-3">
+  <div class="row gap-2">
+    <% @users.each do |user| %>
+      <a class="col-12" href="users/<%= user.id %>">
+        <%= render '/user_card', user: %>
+      <a>
+    <% end %>
+  </div>
+</main>

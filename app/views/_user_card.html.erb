@@ -1,0 +1,17 @@
+<div class="card">
+  <div class="row">
+    <div class="col-3">
+      <img
+        class="img-fluid"
+        src="<%= user.photo %>"
+        alt="user#<%= user.id %>_photo"
+      />
+    </div>
+    <div class="col-5 d-flex flex-column justify-content-center">
+      <h3 class="mb-0 text-center"><%= user.name %></h3>
+    </div>
+    <div class="col-4 d-flex flex-column justify-content-end">
+      <small class="mb-3 text-center">Number of posts: <%= user.posts_counter %></small>
+    </div>
+  </div>
+</div>

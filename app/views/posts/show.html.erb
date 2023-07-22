@@ -1,1 +1,25 @@
-<h1>Current post: <%= @post_id %> by user: <%= @user_id %></h1>
+<main class="container my-5">
+  <div class="row">
+    <div class="col-6">
+      <h1><%= @post.title %></h1>
+      <h5>by <%= @user.name %></h5>
+    </div>
+
+    <div class="col-6">
+      <p class="text-end mt-2">
+        Comments: <%= @post.comments_counter %>, Likes: <%= @post.likes_counter %>
+      </p>
+    </div>
+
+    <div class="col-12">
+      <p class="my-4"><%= @post.text %></p>
+      <h4>Comments:</h4>
+      <div class="d-flex flex-column gap-2">
+        <% @post.comments.each do |comment| %>
+          <%= render '/comment', comment: %>
+        <% end %>
+      </div>
+      <hr/>
+    </div>
+  </div>
+</main>
