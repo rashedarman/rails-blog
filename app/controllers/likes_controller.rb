@@ -1,7 +1,8 @@
 class LikesController < ApplicationController
   def create
-    @like = Like.new(like_params)
-    @like.author = current_user
+    @post = Post.find(params[:post_id])
+    @like = current_user.likes.new(post_id: @post.id)
+
     respond_to do |f|
       f.html { redirect_back(fallback_location: root_path) } if @like.save
     end
