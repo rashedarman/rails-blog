@@ -1,0 +1,16 @@
+<div class="container my-5">
+  <h2 class="mb-3">Write Post</h2>
+  <%= form_with model: @post, url: user_posts_path, class: 'row' do |form| %>
+    <div class="col-12 d-flex flex-column gap-3">
+      <div>
+        <%= form.label :title, class: 'form-label' %>
+        <%= form.text_field :title, class: 'form-control' %>
+      </div>
+      <div>
+        <%= form.label :text, class: 'form-label' %>
+        <%= form.text_area :text, class: 'form-control', rows: 8 %>
+      </div>
+      <%= form.submit "Submit", class: 'btn btn-success' %>
+    </div>
+  <% end %>
+</div>

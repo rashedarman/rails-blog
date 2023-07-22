@@ -20,6 +20,14 @@
         <% end %>
       </div>
       <hr/>
+      <div class="d-flex justify-content-center mb-3">
+          <%= form_with model: Like.new, url: user_post_likes_path(@user, @post), class: "me-2" do |form| %>
+            <div class="d-grid">
+              <%= form.submit "Like", class: "btn btn-primary" %>
+            </div>
+          <% end %>
+        <%= link_to('Add New Comment', new_user_post_comment_path(@user, @post), class: 'btn btn-primary btn-custom') %>
+      </div>
     </div>
   </div>
 </main>
