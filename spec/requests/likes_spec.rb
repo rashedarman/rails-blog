@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Likes', type: :request do
+RSpec.describe Like, type: :request do
   before(:each) do
     @user = User.create(
       name: 'Terry Medhurst',

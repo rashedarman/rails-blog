@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Comments', type: :request do
+RSpec.describe Comment, type: :request do
   before(:each) do
     @user = User.create(
       name: 'Terry Medhurst',
