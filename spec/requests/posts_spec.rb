@@ -1,37 +1,53 @@
 require 'rails_helper'
 
 RSpec.describe 'Posts', type: :request do
-  describe 'posts#index' do
+  before(:each) do
+    @user = User.create(
+      name: 'Terry Medhurst',
+      photo: 'https://robohash.org/hicveldicta.png',
+      bio: 'Lorem ipsum dolor sit amet.',
+      posts_counter: 0
+    )
+    @post = Post.create(
+      author: @user,
+      title: 'Amazing Journey',
+      text: 'First step into the unknown',
+      comments_counter: 0,
+      likes_counter: 0
+    )
+  end
+
+  describe 'GET /index' do
     it 'should return successful response' do
-      get '/users/:user_id/posts/'
+      get user_posts_path(@user.id)
       expect(response).to be_successful
     end
 
     it 'should render :index template' do
-      get '/users/:user_id/posts/'
+      get user_posts_path(@user.id)
       expect(response).to render_template(:index)
     end
 
     it 'should return correct response body' do
-      get '/users/:user_id/posts/'
-      expect(response.body).to include('List of posts')
+      get user_posts_path(@user.id)
+      expect(response.body).to include(@user.name)
     end
   end
 
-  describe 'posts#show' do
+  describe 'GET /show' do
     it 'should return successful response' do
-      get '/users/:user_id/posts/:id'
+      get user_post_path(@user, @post)
       expect(response).to be_successful
     end
 
     it 'should render :show template' do
-      get '/users/:user_id/posts/:id'
+      get user_post_path(@user, @post)
       expect(response).to render_template(:show)
     end
 
     it 'should return correct response body' do
-      get '/users/:user_id/posts/:id'
-      expect(response.body).to include('Current post')
+      get user_post_path(@user, @post)
+      expect(response.body).to include(@post.title)
     end
   end
 end
