@@ -2,7 +2,7 @@
   <%= render '/user_card', user: @user %>
 
   <div class="row gap-2 my-3">
-    <% @user.posts.each do |post| %>
+    <% @posts.each do |post| %>
       <section>
         <a class="text-decoration-none" href="posts/<%= post.id %>">
           <%= render '/post_card', post: %>
@@ -13,4 +13,8 @@
       </section>
     <% end %>
   </div>
+
+  <% if @pagination %>
+    <%= render '/pagination' %>
+  <% end %>
 </main>
