@@ -1,7 +1,13 @@
 class PostsController < ApplicationController
   def index
-    @user_id = params[:user_id]
-    @user = User.find(@user_id)
+    @user = User.find(params[:user_id])
+    @posts = @user.posts.includes(:comments)
+    @pagination = @posts.size > 2
+    return unless @pagination
+
+    @page = params[:page]&.to_i || 1
+    @total_pages = (@posts.size + 1) / 2
+    @posts = @posts.each_slice(2).to_a[@page - 1]
   end
 
   def show
