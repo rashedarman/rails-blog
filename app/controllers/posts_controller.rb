@@ -34,6 +34,13 @@ class PostsController < ApplicationController
     end
   end
 
+  def destroy
+    @post = Post.find(params[:id]).destroy
+    respond_to do |f|
+      f.html { redirect_to user_posts_path(current_user), notice: 'The Post has been destroyed successfully' }
+    end
+  end
+
   def post_params
     params.require(:post).permit(:title, :text)
   end
