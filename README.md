@@ -88,9 +88,9 @@ To run the project, execute the following commands:
 - LinkedIn: [Rashed Arman](https://linkedin.com/in/rashedarman)
 - Twitter: [@rashedarman21](https://twitter.com/rashedarman21)
 
-👤 Daniel Falcon 
-- [Github](https://github.com/Danfall369) 
-- [Linkedin](https://www.linkedin.com/in/danfall369/)
+👤 **Daniel Falcon** 
+- GitHub: [Github](https://github.com/Danfall369) 
+- LinkedIn: [Linkedin](https://www.linkedin.com/in/danfall369/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
