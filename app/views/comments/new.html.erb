@@ -1,12 +1,10 @@
-<div class="container my-5">
-  <div class="row">
-    <h3 class="m-0">Post a Comment</h3>
-    <%= form_with model: @comment, url: user_post_comments_path, class: 'row g-3' do |form| %>
-      <div class="col-6">
-        <%= form.label :comment, class: 'form-label' %>:
-        <%= form.text_area :text, class: 'form-control', required: true %>
-        <%= form.submit "Submit", class: 'btn btn-success mt-3' %>
-      </div>
-    <% end %>
-  </div>
+<div class="row">
+  <h3 class="m-0">Post a Comment</h3>
+  <%= form_with model: @comment, url: user_post_comments_path, class: 'row g-3' do |form| %>
+    <div class="col-6">
+      <%= form.label :comment, class: 'form-label' %>:
+      <%= form.text_area :text, class: 'form-control', required: true %>
+      <%= form.submit "Submit", class: 'btn btn-success mt-3' %>
+    </div>
+  <% end %>
 </div>
