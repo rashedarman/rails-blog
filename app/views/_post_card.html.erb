@@ -1,7 +1,19 @@
 <div class="card">
   <div class="card-body">
-    <h5 class="card-title"><%= post.title %></h5>
-    <p class="card-text text-truncate mb-1"><%= post.text %></p>
+    <div class="d-flex justify-content-between">
+      <div>
+        <h5 class="card-title"><%= post.title %></h5>
+        <p class="card-text text-truncate mb-1"><%= post.text %></p>
+      </div>
+      <%if can? :destroy, post %>
+        <%= button_to "Delete", 
+            user_post_path(post.author, post), 
+            method: :delete, 
+            data: { turbo_confirm: "Are you sure you want to delete the post?" },
+            class: "btn btn-sm btn-danger" %>
+      <% end %>
+
+    </div>
     <p class="mb-0 text-end">
       <small class="text-body-secondary">
         Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %>
