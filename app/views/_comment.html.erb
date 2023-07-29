@@ -1,3 +1,12 @@
-<p class="text-start m-0">
-  <span class="fw-bold"><%= comment.author.name %>:</span> <%= comment.text %>
-</p>
+<div class="d-flex">
+  <p class="text-start m-0">
+    <span class="fw-bold"><%= comment.author.name %>:</span> <%= comment.text %>
+  </p>
+  <% if can? :destroy, comment %>
+    <%= button_to "Delete", 
+        user_post_comment_path(comment.author_id, comment.post_id, comment), 
+        method: :delete, 
+        data: { turbo_confirm: "Delete Comment?" }, 
+        class: "btn btn-sm btn-danger ms-3" %>
+  <% end %>
+</div>
