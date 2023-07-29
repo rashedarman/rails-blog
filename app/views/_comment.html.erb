@@ -6,7 +6,7 @@
     <%= button_to "Delete", 
         user_post_comment_path(comment.author_id, comment.post_id, comment), 
         method: :delete, 
-        data: { turbo_confirm: "Are you sure you want delete the comment?" }, 
+        data: { turbo_confirm: "Delete Comment?" }, 
         class: "btn btn-sm btn-danger ms-3" %>
   <% end %>
 </div>
