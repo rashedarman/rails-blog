@@ -3,6 +3,9 @@ class Post < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :likes, dependent: :destroy
 
+  attribute :comments_counter, :integer, default: 0
+  attribute :likes_counter, :integer, default: 0
+
   def update_post_counter
     author.update(posts_counter: author.post.count)
   end
