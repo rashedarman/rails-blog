@@ -97,16 +97,16 @@ To run the project, execute the following commands:
 ## 🔭 Future Features <a name="future-features"></a>
 
 - [x] Creating a data model
-- [ ] Processing data in models
-- [ ] Validations and Model specs
-- [ ] Setup and controllers
-- [ ] Controllers specs
-- [ ] Views
-- [ ] Forms
-- [ ] Integration specs for Views and fixing n+1 problems
-- [ ] Add Devise
-- [ ] Add authorization rules
-- [ ] Add API endpoints
+- [x] Processing data in models
+- [x] Validations and Model specs
+- [x] Setup and controllers
+- [x] Controllers specs
+- [x] Views
+- [x] Forms
+- [x] Integration specs for Views and fixing n+1 problems
+- [x] Add Devise
+- [x] Add authorization rules
+- [x] Add API endpoints
 - [ ] API documentation
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
